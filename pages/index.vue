@@ -1,20 +1,8 @@
 <script lang="ts" setup>
-const runtimeConfig = useRuntimeConfig()
+const jobService = useJobService()
 
-async function getJobs() {
-  const res = await $fetch(`${runtimeConfig.public.apiBaseUrl}/categories`, {
-    withCredentials: false,
-    crossorigin: false,
-    method: 'GET',
-    headers: {
-      Accept: 'application/json'
-    }
-  })
-  console.log(res)
-}
-if (import.meta.client) {
-  getJobs()
-}
+const { data } = await jobService.categories()
+console.log(data.value)
 </script>
 
 <template>

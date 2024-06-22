@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="flex flex-col justify-between min-h-dvh">
+  <div class="flex min-h-dvh flex-col justify-between">
     <section class="bg-white">
       <TheNavbar />
       <TheHero />
